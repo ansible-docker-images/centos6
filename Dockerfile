@@ -12,5 +12,5 @@ RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
 # Install/prepare Ansible
 RUN mkdir -p /etc/ansible/
 RUN mkdir -p /opt/ansible/roles
-RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
-RUN echo "[defaults]\nroles_path = /opt/ansible/roles" > /etc/ansible/ansible.cfg
+RUN printf '[local]\nlocalhost ansible_connection=local\n' > /etc/ansible/hosts
+RUN printf '[defaults]\nroles_path = /opt/ansible/roles\n' > /etc/ansible/ansible.cfg
